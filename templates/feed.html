@@ -16,8 +16,10 @@
 			</a>
 			<h3>
 		</div>
+		<div>Author: {{item.author}}</div>
 		<div class='feedPart'>		
 			{{item.summary | safe}} 
 		</div>
+		{{item.updated}}
 	</div>
 {% endfor %}
