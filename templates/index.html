@@ -1,0 +1,6 @@
+<!doctype html>
+<title>9GAG-RSS Feed Consumer</title>
+	<h1 > 9GAG-RSS </h1>
+	{% for channel in channels %}
+		<h2> <a href="{{ '/feed/' + channel.replace(' ', '') }}" > {{channel}} </a> </h2>
+	{% endfor %}

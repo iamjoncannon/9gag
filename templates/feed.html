@@ -1,0 +1,23 @@
+<!doctype html>
+<title></title>
+<link rel="stylesheet" type="text/css" href="../static/style.css">
+
+<a href='/'> back </a>
+<h2>
+<div id='title'> {{ feed[0][1].title }} 
+</h2>
+</div>
+{% for item in feed[1][1] %}
+	<div class='feedItem'>
+		<div class='feedPart'>
+			<h3>
+			<a href="{{item.link}}"> 
+			{{item.title}} 
+			</a>
+			<h3>
+		</div>
+		<div class='feedPart'>		
+			{{item.summary | safe}} 
+		</div>
+	</div>
+{% endfor %}
