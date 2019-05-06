@@ -31,7 +31,6 @@ channels = ('Awesome',
 # feedparser to retrieve RSS data
 @cache.cached(timeout=120) # feeds are refreshed every 2 minutes
 def feeder(channel):
-	print('this is not cached')
 	channel = channel.replace('Trending', '')
 	url = 'https://9gag-rss.com/api/rss/get?code=9GAG' + channel + '&format=2'
 	d = feedparser.parse(url)
@@ -51,6 +50,4 @@ def showFeed(channel):
 	return render_template('feed.html', feed=data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    # app.run()
-
+    app.run()
