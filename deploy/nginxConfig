@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+sudo apt-get update
 sudo apt-get -y install nginx
 sudo rm /etc/nginx/sites-enabled/default
 sudo cp ./deploy/engine /etc/nginx/sites-available
