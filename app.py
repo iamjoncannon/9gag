@@ -1,6 +1,5 @@
 import feedparser
 import ssl
-import json
 from flask import Flask, url_for, render_template, request, session
 from flask_caching import Cache
 app = Flask(__name__)
@@ -31,7 +30,7 @@ channels = ('Awesome',
 # feedparser to retrieve RSS data
 @cache.cached(timeout=120) # feeds are refreshed every 2 minutes
 def feeder(channel):
-	print('not cached')
+	print('not cached') # verify caching with serverlogs
 	channel = channel.replace('Trending', '')
 	url = 'https://9gag-rss.com/api/rss/get?code=9GAG' + channel + '&format=2'
 	d = feedparser.parse(url)
